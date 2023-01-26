@@ -120,3 +120,6 @@ fi
 export DISPLAY=$(ip route|awk '/^default/{print $3}'):0.0
 export LIBGL_ALWAYS_INDIRECT=0
 export XDG_RUNTIME_DIR=/tmp/runtime-atticus
+
+# allows vim commands to be used on the terminal
+set -o vi
