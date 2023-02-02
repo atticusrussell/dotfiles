@@ -134,5 +134,8 @@ set -o vi
 # source vivado
 source /tools/Xilinx/Vivado/2019.1/settings64.sh
 
+#alias to fix USB passthrough
+alias fixusb='sudo service udev restart'
+
 # oh-my-posh
 eval "$(oh-my-posh init bash --config ~/.poshthemes/montys.omp.json)"
