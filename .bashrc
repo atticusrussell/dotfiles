@@ -139,3 +139,6 @@ alias fixusb='sudo service udev restart'
 
 # oh-my-posh
 eval "$(oh-my-posh init bash --config ~/.poshthemes/montys.omp.json)"
+
+# this should source onshape API stuff
+source ~/.api_keys
