@@ -132,7 +132,7 @@ export XDG_RUNTIME_DIR=/tmp/runtime-atticus
 set -o vi
 
 # source vivado
-source /tools/Xilinx/Vivado/2019.1/settings64.sh
+alias sourceXil="/tools/Xilinx/Vivado/2019.1/settings64.sh"
 
 #alias to fix USB passthrough
 alias fixusb='sudo service udev restart'
@@ -142,3 +142,11 @@ eval "$(oh-my-posh init bash --config ~/.poshthemes/montys.omp.json)"
 
 # this should source onshape API stuff
 source ~/.api_keys
+
+# source ROS2
+source /opt/ros/foxy/setup.bash
+# sets up tab completion for colcon
+source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
+# sets up colcon_cd to change the current working dir to the dir of pkg
+source /usr/share/colcon_cd/function/colcon_cd.sh
+export _colcon_cd_root=/opt/ros/foxy/
