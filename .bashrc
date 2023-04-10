@@ -92,7 +92,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -138,7 +138,7 @@ alias sourceXil="/tools/Xilinx/Vivado/2019.1/settings64.sh"
 alias fixusb='sudo service udev restart'
 
 # oh-my-posh
-eval "$(oh-my-posh init bash --config ~/.poshthemes/montys.omp.json)"
+# eval "$(oh-my-posh init bash --config ~/.poshthemes/montys.omp.json)"
 
 # this should source onshape API stuff
 source ~/.api_keys
