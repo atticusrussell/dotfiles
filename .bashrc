@@ -2,12 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# get variable of git branch
-parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -63,8 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\e[33m\w\e[0m \e[36m$(parse_git_branch)\e[0m 
-$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -92,7 +85,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -122,31 +115,17 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-#added by ajr to let WSL GUI apps function ENABLE IF VcXSrv 
-export DISPLAY=$(ip route|awk '/^default/{print $3}'):0.0
-export LIBGL_ALWAYS_INDIRECT=0
-export XDG_RUNTIME_DIR=/tmp/runtime-atticus
-
-# allows vim commands to be used on the terminal
-set -o vi
-
-# source vivado
-alias sourceXil="/tools/Xilinx/Vivado/2019.1/settings64.sh"
-
-#alias to fix USB passthrough
-alias fixusb='sudo service udev restart'
-
-# oh-my-posh
-# eval "$(oh-my-posh init bash --config ~/.poshthemes/montys.omp.json)"
-
-# this should source onshape API stuff
-source ~/.api_keys
-
-# source ROS2
-source /opt/ros/foxy/setup.bash
-# sets up tab completion for colcon
+source /opt/ros/humble/setup.bash
 source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
-# sets up colcon_cd to change the current working dir to the dir of pkg
-source /usr/share/colcon_cd/function/colcon_cd.sh
-export _colcon_cd_root=/opt/ros/foxy/
+alias gamepadperm='sudo chmod 666 /dev/input/*'
+alias cbuild='cd ~/dev_ws && colcon build --symlink-install && source install/setup.bash'
+alias srcws='source install/setup.bash'
+# enable colorized output for errors in some ROS2 things
+export RCUTILS_COLORIZED_OUTPUT=1
+
+# automatically source RosTeamWorkspace if the .ros_team_ws file is present in your home folder.
+if [ -f ~/.ros_team_ws_rc ]; then
+    . ~/.ros_team_ws_rc
+fi
+export PATH="$HOME/.local/bin:$PATH"
+
