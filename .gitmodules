@@ -1,9 +1,0 @@
-[submodule ".vim/plugged/seoul256.vim"]
-	path = .vim/plugged/seoul256.vim
-	url = https://github.com/junegunn/seoul256.vim.git
-[submodule ".vim/plugged/vim-sensible"]
-	path = .vim/plugged/vim-sensible
-	url = https://github.com/tpope/vim-sensible.git
-[submodule ".vim/plugged/vimtex"]
-	path = .vim/plugged/vimtex
-	url = https://github.com/lervag/vimtex.git
