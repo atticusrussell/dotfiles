@@ -4,3 +4,6 @@
 [submodule ".vim/plugged/vim-sensible"]
 	path = .vim/plugged/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
+[submodule ".vim/plugged/vimtex"]
+	path = .vim/plugged/vimtex
+	url = https://github.com/lervag/vimtex.git
