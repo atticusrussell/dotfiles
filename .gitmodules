@@ -1,0 +1,3 @@
+[submodule ".vim/plugged/seoul256.vim"]
+	path = .vim/plugged/seoul256.vim
+	url = https://github.com/junegunn/seoul256.vim.git
