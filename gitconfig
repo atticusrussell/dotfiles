@@ -1,10 +1,6 @@
 [init]
 	defaultBranch = main
-[author]
-	email = atticusrussell@gmail.com
-	name = Atticus Russell
-[user]
-	name = Atticus Russell
-	email = atticusrussell@gmail.com
-[core]
-	editor = code --wait
+
+# enables overriding of this config with a local config
+[include]
+        path = ~/.gitconfig_local
