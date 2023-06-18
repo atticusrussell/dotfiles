@@ -4,3 +4,5 @@
 # enables overriding of this config with a local config
 [include]
         path = ~/.gitconfig_local
+[push]
+	default = current

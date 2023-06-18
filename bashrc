@@ -53,22 +53,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-source /opt/ros/humble/setup.bash
-source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
-source /usr/share/colcon_cd/function/colcon_cd.sh
-alias gamepadperm='sudo chmod 666 /dev/input/*'
-# cbs colcon build symlink and source
-alias cbs='cd ~/workspace/dev_ws && colcon build --symlink-install && source install/setup.bash && 
-  echo "sourced_install" '
-# enable colorized output for errors in some ROS2 things
-export RCUTILS_COLORIZED_OUTPUT=1
 
-# automatically source RosTeamWorkspace if the .ros_team_ws file is present in your home folder.
-if [ -f ~/.ros_team_ws_rc ]; then
-    . ~/.ros_team_ws_rc
-fi
-
-export ROS_DOMAIN_ID=0
 
 # pip bash completion
 complete -o default -F _pip_completion pip
