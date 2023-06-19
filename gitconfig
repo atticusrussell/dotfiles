@@ -6,3 +6,5 @@
         path = ~/.gitconfig_local
 [push]
 	default = current
+[core]
+	excludesfile = /home/atticus/.gitignore_global

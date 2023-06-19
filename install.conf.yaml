@@ -9,6 +9,7 @@
     ~/.bash:
     ~/.bashrc: bashrc
     ~/.gitconfig: gitconfig
+    ~/.gitignore_global:
     ~/.tmux.conf: tmux.conf
     ~/.shell:
     ~/.vim: vim
