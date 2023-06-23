@@ -7,4 +7,15 @@
 [push]
 	default = current
 [core]
-	excludesfile = /home/atticus/.gitignore_global
+	excludesfile = ~/.gitignore_global
+
+[author]
+	email = atticusrussell@gmail.com
+	name = Atticus Russell
+
+[user]
+	name = Atticus Russell
+	email = atticusrussell@gmail.com
+
+[github]
+	user = atticusrussell
